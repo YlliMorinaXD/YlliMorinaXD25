@@ -1,0 +1,28 @@
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  margin-bottom: 20px;
+}
+
+.hero {
+  background-image: url('your-hero-image.jpg'); /* Add your hero image here */
+  background-size: cover;
+  background-position: center;
+}
+
+.social-icon {
+  margin: 0 10px;
+  font-size: 24px;
+  color: #007bff;
+}
+
+.social-icon:hover {
+  color: #0056b3;
+}
+
+#moreInfo {
+  margin-top: 20px;
+}
