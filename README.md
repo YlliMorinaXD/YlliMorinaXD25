@@ -32,10 +32,10 @@ Kjo faqe interneti ofron një zgjidhje të plotë për blerjen dhe menaxhimin e 
 
 Ky projekt është zhvilluar duke përdorur teknologjitë e mëposhtme:
 
-- 🌐 **HTML** – 62.5%  
-- 🧠 **JavaScript** – 13.4%  
-- 🐘 **PHP** – 12.9%  
-- 🎨 **CSS** – 11.2%  
+- 🌐 **HTML** – 61.1%  
+- 🧠 **JavaScript** – 12.4%  
+- 🐘 **PHP** – 10.4%  
+- 🎨 **CSS** – 16.1%  
 
 ---
 
