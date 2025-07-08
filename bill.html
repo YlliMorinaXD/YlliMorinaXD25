@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill Page</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        #bill {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 650px;
+            margin: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #007BFF;
+            color: white;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        input {
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        #total-price {
+            font-weight: bold;
+            color: #d9534f;
+        }
+    </style>
+</head>
+<body>
+    <div id="bill">
+        <h2>Bill</h2>
+        <input type="text" id="product-name" placeholder="Enter product name" list="product-options">
+        <datalist id="product-options"></datalist>
+        <input type="number" id="quantity" min="1" max="10" value="1">
+        <button onclick="addProduct()">Add</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody id="bill-items"></tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3"><strong>Total Price:</strong></td>
+                    <td id="total-price">$0.00</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+    <script>
+        const products = {
+            "Intel i3 - 13100F": 122.49, 
+            "Intel i5 - 12600K": 189.09,
+            "Intel Core i9 - 14900k": 575.66,
+            "Amd Ryzen 3": 68.50,
+            "Amd Ryze 5 5600G": 159.99,
+            "AMD Ryzen 7 7800X3D": 449.00,
+            "Amd Ryzen 9 7950X3D": 626.53,
+            "Corsair iCUE H170i ELITE LCD": 299.99,
+            "Corsair iCUE H150i ELITE CAPELLIX XT": 219.99,
+            "NZXT Kraken Elite 360 RGB": 350.93,
+            "NZXT Kraken Z63": 265.35,
+            "Asus ROG STRIX GAMING OC 3080": 258.36,
+            "Asus ROG STRIX GAMING OC 4080 White": 365.25,
+            "GeForec RTX 4080": 575.66,
+            "Asus ROG STRIX GAMING OC 4090": 896.99,
+            "Corsair Vengeance RGB 64 GB": 150.00,
+            "Corsair RM1000e 1000 W": 199.99,
+            "Corsair RM850e 850 W": 149.99,
+            "Corsair Vengeance RGB 32 GB": 99.99,
+            "GeForce 3080 TI": 219.99,
+            "HP HyperX Cloud II": 78.62,
+            "Logitech Pro X HeadPhones": 105.63,
+            "Razer BlackWidow V3": 115.99,
+            "Logitech PRO X KeyBoard": 99.99,
+            "SteelSeries Apex Pro": 245.99,
+            "Corsair K65 60%": 304.93,
+            "MSI Optix G271CP": 304.93,
+            "MSI G274QPX": 350.00,
+            "Samsung Odyssey Neo G95NC": 400.00,
+            "Samsung Odyssey G5": 500.00,
+            "Asus TUF Gaming VG27AQ1A": 250.00,
+            "Asus GeForce RTX 5090 32GB TUF OC Gaming": 2549.50,
+            "ASUS GeForce RTX 5080 ROG Astral OC 16GB GDDR7": 1579.50,
+            "Asus GeForce RTX 5070 Ti OC, 16GB GDDR7": 1149.50
+        };
+
+        function populateProductList() {
+            let productOptions = $('#product-options');
+            for (let key in products) {
+                productOptions.append(`<option value="${key}">`);
+            }
+        }
+
+        function addProduct() {
+            let name = $('#product-name').val();
+            let quantity = parseInt($('#quantity').val());
+            if (!products[name]) {
+                alert("Invalid product name!");
+                return;
+            }
+            
+            let existingRow = $(`#bill-items tr:contains(${name})`);
+            if (existingRow.length) {
+                let existingQuantity = parseInt(existingRow.find('td:nth-child(2)').text());
+                if (existingQuantity + quantity > 10) {
+                    alert("You have reached the 10 quantity limit for this product!");
+                    return;
+                }
+                existingRow.find('td:nth-child(2)').text(existingQuantity + quantity);
+                existingRow.find('td:nth-child(4)').text(`$${((existingQuantity + quantity) * products[name]).toFixed(2)}`);
+            } else {
+                $('#bill-items').append(`
+                    <tr>
+                        <td>${name}</td>
+                        <td>${quantity}</td>
+                        <td>$${products[name].toFixed(2)}</td>
+                        <td>$${(products[name] * quantity).toFixed(2)}</td>
+                    </tr>
+                `);
+            }
+            updateTotalPrice();
+        }
+
+        function updateTotalPrice() {
+            let total = 0;
+            $('#bill-items tr').each(function() {
+                let price = parseFloat($(this).find('td:nth-child(4)').text().replace('$', ''));
+                total += price;
+            });
+            $('#total-price').text(`$${total.toFixed(2)}`);
+        }
+
+        $(document).ready(populateProductList);
+    </script>
+</body>
+</html>
