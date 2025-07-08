@@ -77,7 +77,7 @@ Nëse keni ndonjë pyetje apo sugjerim, mund të na kontaktoni përmes faqes [Ko
 
 ## 🔐 Licenca
 
-Ky projekt është i mbrojtur nga YlliMorina. Nuk Mund ta përdorni Pa Lejen E YlliMorina Dhe Nuk Mund  modifikoni dhe shpërndani sipas nevojës, me respektim të kushteve të licencës.
+Ky projekt është i mbrojtur nga **Ylli Morina**. Nuk Mund ta Perdorni Pa Lejen E **Ylli Morina** Dhe Nuk Mund  Modifikoni Dhe Shpërndani Sipas Nevojës, Me Respektim Të Kushteve Të Licencës.
 
 ---
 
