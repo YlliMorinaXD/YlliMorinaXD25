@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Profile</title>
+  <link rel="stylesheet" href="profile.css" />
+</head>
+<body>
+
+  <div class="profile-container">
+    <h2>My Profile</h2>
+
+    <form id="profile-form" novalidate>
+      <div class="form-group">
+        <label for="name">First Name</label>
+        <input type="text" id="name" name="name" required />
+      </div>
+
+      <div class="form-group">
+        <label for="lastname">Last Name</label>
+        <input type="text" id="lastname" name="lastname" required />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+
+      <div class="form-group">
+        <label for="dob">Date of Birth</label>
+        <input type="date" id="dob" name="dob" required />
+      </div>
+
+      <div class="form-group">
+        <label for="gender">Gender</label>
+        <select id="gender" name="gender" required>
+          <option value="" disabled selected>Select Gender</option>
+          <option value="female">Girl</option>
+          <option value="male">Boy</option>
+        </select>
+      </div>
+
+      <button type="submit" class="submit-btn">Save Profile</button>
+    </form>
+  </div>
+
+  <script src="profile.js"></script>
+</body>
+</html>
