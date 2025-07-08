@@ -104,3 +104,60 @@ select, .search-box input {
   font-weight: bold;
   color: #000;
 }
+.order-box {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 15px;
+  background: #fff;
+  transition: box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.order-box:hover {
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.order-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+
+.order-content img {
+  width: 60px;
+  height: auto;
+  border-radius: 4px;
+}
+
+.order-content .arrow {
+  margin-left: auto;
+  font-size: 18px;
+  color: #888;
+  transition: transform 0.2s ease;
+}
+
+.order-box:hover .arrow {
+  transform: translateX(5px);
+  color: #000;
+}
+.order-content .arrow {
+  margin-left: auto;
+  font-size: 20px;
+  color: #888;
+  text-decoration: none;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.order-content .arrow:hover {
+  transform: translateX(5px);
+  color: #000;
+}
