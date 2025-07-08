@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intel Core i3-13100F</title>
+  <link rel="stylesheet" href="Intel i3 product page.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Product Section -->
+    <div class="product-page">
+      <!-- Left Section: Product Image -->
+      <div class="product-image">
+        <img src="intel i3 - 13100F.jpg" alt="Intel Core i3-12100F">
+        <div class="thumbnail">
+          <img src="intel i3 - 13100F.jpg" alt="Thumbnail">
+        </div>
+      </div>
+
+      <!-- Right Section: Product Details -->
+      <div class="product-details">
+        <h1>Processor Intel Core i3-12100F</h1>
+        <p><strong>Evaluation:</strong> ⭐⭐⭐⭐☆</p>
+        <p><strong>Warranty:</strong> 1 Year • <strong>The origin of the brand:</strong> Usa</p>
+        <p><strong>Code:</strong> CT-IN1213-INT-002pon</p>
+
+        <!-- Pricing -->
+        <div class="price">
+          <p class="original-price">124.50 €</p>
+          <p class="discounted-price">74.50 €</p>
+          <p class="savings">You save: 50.00 € (-40%)</p>
+        </div>
+
+        <!-- Payment Options -->
+        <div class="installments">
+          <p><strong>Payment in installments:</strong></p>
+          <button class="installment-option">24 interest-free installments for €3.10/month</button>
+          <button class="installment-option">12 interest-free installments for €6.20/month</button>
+        </div>
+
+        <!-- Quantity Selector -->
+        <div class="quantity-selector">
+          <label for="quantity">Amount:</label>
+          <button class="qty-btn" onclick="decrementQuantity()">-</button>
+          <input type="number" id="quantity" value="1" min="1">
+          <button class="qty-btn" onclick="incrementQuantity()">+</button>
+        </div>
+
+        <!-- FastDelevery -->
+        <div class="gjirafa-flex">
+          <p><strong>Fast Delevery:</strong></p>
+          <label>
+            <input type="radio" name="FastDelevery" value="yes"> Yes (+8.50 €)
+          </label>
+          <label>
+            <input type="radio" name="FastDelevery" value="no" checked> Jo
+          </label>
+        </div>
+
+        <!-- Delivery Info -->
+        <div class="delivery">
+          <p><strong>Product arrival time:</strong></p>
+          <p>Las Vegas: November 18, 2024 - December 1, 2024</p>
+          <p>Usa, other: November 10 2024 - November 17 2024</p>
+        </div>
+
+        <!-- Payment Methods -->
+        <div class="payment-methods">
+          <button onclick="selectPayment('cash')">Pay in hand</button>
+          <button onclick="selectPayment('online')">Pay online</button>
+          <button onclick="selectPayment('bank')">Pay by bank transfer</button>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+          <form action="checkout.php">
+            <button class="buy-now">Buy Now</button>
+          </form>
+          <form action="cart.html" method="post">
+            <button class="add-to-cart">AddTo Cart</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="Intel i3 product page.js"></script>
+</body>
+</html>

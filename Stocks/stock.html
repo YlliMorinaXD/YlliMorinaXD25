@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f4f4f9;
+        }
+        .container {
+            margin-top: 20px;
+        }
+        .stock-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .stock-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 2px solid #007bff;
+            padding: 30px;
+            border-radius: 10px;
+            background: #fff;
+            width: 400px;
+            text-align: center;
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .stock-item h5 {
+            color: #007bff;
+            font-size: 1.5rem;
+        }
+        .stock-item p {
+            margin: 10px 0;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        .stock-item button {
+            margin-top: 15px;
+            padding: 10px 15px;
+            font-size: 1rem;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .stock-item button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center text-primary">Product Stock</h2>
+        
+        <div id="stock-list" class="stock-container">
+            <!-- Stock items will be inserted here by JavaScript -->
+        </div>
+    </div>
+
+    <script>
+        const products = {
+            "Intel i3 - 13100F": { price: 122.49, stock: 10 },
+            "Intel i5 - 12600K": { price: 189.09, stock: 15 }, 
+            "Intel Core i9 - 14900k": { price: 575.66, stock: 0 }, 
+            "Amd Ryzen 3": { price: 68.50, stock: 12 },
+            "Amd Ryzen 5 5600G": { price: 159.99, stock: 8 }, 
+            "AMD Ryzen 7 7800X3D": { price: 449.00, stock: 6 }, 
+            "Amd Ryzen 9 7950X3D": { price: 626.53, stock: 0 }, 
+            "Corsair iCUE H170i ELITE LCD": { price: 299.99, stock: 7 },
+            "Corsair iCUE H150i ELITE CAPELLIX XT": { price: 219.99, stock: 5 }, 
+            "NZXT Kraken Elite 360 RGB": { price: 350.93, stock: 9 }, 
+            "NZXT Kraken Z63": { price: 265.35, stock: 4 },
+            "Asus ROG STRIX GAMING OC 3080": { price: 258.36, stock: 0 }, 
+            "Asus ROG STRIX GAMING OC 4080 White": { price: 365.25, stock: 3 }, 
+            "GeForec RTX 4080": { price: 575.66, stock: 2 },
+            "Asus ROG STRIX GAMING OC 4090": { price: 896.99, stock: 1 }, 
+            "Corsair Vengeance RGB 64 GB": { price: 150.00, stock: 7 }, 
+            "Corsair RM1000e 1000 W": { price: 199.99, stock: 10 },
+            "Corsair RM850e 850 W": { price: 149.99, stock: 9 }, 
+            "Corsair Vengeance RGB 32 GB": { price: 99.99, stock: 6 }, 
+            "GeForce 3080 TI": { price: 219.99, stock: 11 }, 
+            "HP HyperX Cloud II": { price: 78.62, stock: 14 },
+            "Logitech Pro X HeadPhones": { price: 105.63, stock: 13 }, 
+            "Razer BlackWidow V3": { price: 115.99, stock: 10 }, 
+            "Logitech PRO X KeyBoard": { price: 99.99, stock: 5 }, 
+            "SteelSeries Apex Pro": { price: 245.99, stock: 7 },
+            "Corsair K65 60%": { price: 304.93, stock: 3 }, 
+            "MSI Optix G271CP": { price: 304.93, stock: 4 }, 
+            "MSI G274QPX": { price: 350.00, stock: 8 }, 
+            "Samsung Odyssey Neo G95NC": { price: 400.00, stock: 5 },
+            "Samsung Odyssey G5": { price: 500.00, stock: 2 }, 
+            "Asus TUF Gaming VG27AQ1A": { price: 250.00, stock: 6 }, 
+            "Asus GeForce RTX 5090 32GB TUF OC Gaming": { price: 2549.50, stock: 0 },
+            "ASUS GeForce RTX 5080 ROG Astral OC 16GB GDDR7": { price: 1579.50, stock: 1 }, 
+            "Asus GeForce RTX 5070 Ti OC, 16GB GDDR7": { price: 1149.50, stock: 3 }
+        };
+
+        const stockList = document.getElementById("stock-list");
+        
+        for (const [product, details] of Object.entries(products)) {
+            const productDiv = document.createElement("div");
+            productDiv.classList.add("stock-item");
+            productDiv.innerHTML = `
+                <h5>${product}</h5>
+                <p>Price: $${details.price.toFixed(2)}</p>
+                <button onclick="checkStock('${product}', ${details.stock})">Check if it is in stock</button>
+            `;
+            stockList.appendChild(productDiv);
+        }
+
+        function checkStock(product, stock) {
+            alert(stock > 0 ? `${product} is in stock!` : `${product} is out of stock!`);
+        }
+    </script>
+</body>
+</html>

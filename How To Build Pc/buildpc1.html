@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build the Best Gaming PC</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            background-color: #121212;
+            color: white;
+        }
+        .container {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container text-center">
+        <h1 class="mt-4">How to Build the Best Gaming PC</h1>
+        
+        <!-- Steps to Build -->
+        <div class="mt-5">
+            <h2>Step-by-Step Guide</h2>
+            <ul class="list-group">
+                <li class="list-group-item bg-dark text-white">1. Choose a high-performance CPU</li>
+                <li class="list-group-item bg-dark text-white">2. Pick a compatible motherboard</li>
+                <li class="list-group-item bg-dark text-white">3. Select a powerful GPU</li>
+                <li class="list-group-item bg-dark text-white">4. Get fast and high-capacity RAM</li>
+                <li class="list-group-item bg-dark text-white">5. Choose an SSD for fast storage</li>
+                <li class="list-group-item bg-dark text-white">6. Ensure sufficient power with a reliable PSU</li>
+                <li class="list-group-item bg-dark text-white">7. Select a case with good airflow</li>
+                <li class="list-group-item bg-dark text-white">8. Assemble carefully and manage cables</li>
+                <li class="list-group-item bg-dark text-white">9. Install the OS and necessary drivers</li>
+            </ul>
+        </div>
+
+        <!-- Components Section -->
+        <div class="mt-5">
+            <h2>Best PC Parts</h2>
+            <div class="btn-group" role="group" id="filter-buttons">
+                <button class="btn btn-outline-light" data-filter="all">All</button>
+                <button class="btn btn-outline-light" data-filter="cpu">CPU</button>
+                <button class="btn btn-outline-light" data-filter="gpu">GPU</button>
+                <button class="btn btn-outline-light" data-filter="ram">RAM</button>
+            </div>
+            <div class="row mt-3" id="pc-parts">
+                <div class="col-md-4 part" data-category="cpu">
+                    <div class="card bg-dark text-white">
+                        <div class="card-body">
+                            <h5 class="card-title">Ryzen 9 7950X</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 part" data-category="gpu">
+                    <div class="card bg-dark text-white">
+                        <div class="card-body">
+                            <h5 class="card-title">RTX 4090</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 part" data-category="ram">
+                    <div class="card bg-dark text-white">
+                        <div class="card-body">
+                            <h5 class="card-title">32GB DDR5 RAM</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#filter-buttons button').click(function() {
+                var filter = $(this).data('filter');
+                
+                if (filter == 'all') {
+                    $('.part').show();
+                } else {
+                    $('.part').hide();
+                    $('.part[data-category="' + filter + '"]').show();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

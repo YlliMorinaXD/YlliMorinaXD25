@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PC Parts Updates</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            background-color: #ffffff;
+            color: #333;
+        }
+        .custom-box {
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .img-box img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .small-img {
+            width: 80%;
+            display: block;
+            margin: 0 auto;
+        }
+        .accordion-button {
+            background: #007bff;
+            color: #fff;
+        }
+        .accordion-body {
+            background: #e9ecef;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <center><h1 class="text-primary">Latest Updates on PC Parts</h1></center>
+        <center><p class="text-muted">Stay informed about the newest releases in graphics cards, processors, RAM, motherboards, and storage.</p></center>
+        
+        <div class="row">
+            <div class="col-md-8">
+                <div class="custom-box">
+                    <img src="GeForce-RTX-5090-2-1024x576.webp" alt="Featured Product" class="img-fluid">
+                </div>
+                <center><h3>New Arrivals & Updates</h3></center>
+                <div class="accordion" id="hardwareAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#graphicsCard">
+                                Graphics Cards
+                            </button>
+                        </h2>
+                        <div id="graphicsCard" class="accordion-collapse collapse" data-bs-parent="#hardwareAccordion">
+                            <div class="accordion-body">The newest GPUs delivering high performance and efficiency.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#processors">
+                                Processors
+                            </button>
+                        </h2>
+                        <div id="processors" class="accordion-collapse collapse" data-bs-parent="#hardwareAccordion">
+                            <div class="accordion-body">Latest CPUs with improved speed and power efficiency.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#ram">
+                                RAM
+                            </button>
+                        </h2>
+                        <div id="ram" class="accordion-collapse collapse" data-bs-parent="#hardwareAccordion">
+                            <div class="accordion-body">Faster and higher-capacity memory for smoother multitasking.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#motherboards">
+                                Motherboards
+                            </button>
+                        </h2>
+                        <div id="motherboards" class="accordion-collapse collapse" data-bs-parent="#hardwareAccordion">
+                            <div class="accordion-body">Next-gen boards with enhanced features and connectivity.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#storage">
+                                Storage
+                            </button>
+                        </h2>
+                        <div id="storage" class="accordion-collapse collapse" data-bs-parent="#hardwareAccordion">
+                            <div class="accordion-body">NVMe SSDs and high-capacity HDDs for all your needs.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-6 custom-box">
+                        <img src="ordering-rtx-50-square-768x768 (1).webp" alt="Latest GPU" class="img-fluid">
+                    </div>
+                    <div class="col-md-6 custom-box">
+                        <img src="image-removebg-preview.png" alt="Latest GPT" class="img-fluid small-img">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 sidebar">
+                <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Search updates...">
+                </div>
+                <h4>Trending Hardware</h4>
+                <div class="custom-box">
+                    <img src="OIP.jpg" alt="Upcoming GPU" class="img-fluid">
+                    <p><strong>AMD 5000 Series</strong><br>Expected Launch: Q4 2025</p>
+                </div>
+                <div class="custom-box">
+                    <img src="MSI-Z890-B860-Motherboards-For-Intel-Arrow-Lake-Desktop-CPUs-Main-1920x1080.jpg" alt="New CPU" class="img-fluid">
+                    <p><strong>MSI-Z890-B860-Motherboards-For-Intel-Arrow-Lake-Desktop-CPUs-Main</strong><br>Out Now Go Buy</p>
+                </div>
+                <div class="custom-box">
+                    <img src="image-removebg-preview (1).png" alt="Faster Memory" class="img-fluid">
+                    <p><strong>RAM Kingston FURY 32GB 3600MT/s DDR4 CL18 DIMM (Kit of 2) Beast RGB</strong><br>Out Now Go Buy Them</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

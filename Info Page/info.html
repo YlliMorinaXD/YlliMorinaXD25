@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Prices & Services</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        .card {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="text-primary text-center">Our Prices & Services</h1>
+        <p class="text-muted text-center">Explore our affordable pricing and top-notch services for PC building, repairs, and upgrades.</p>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <h3 class="text-success">Our Services</h3>
+                <div class="accordion" id="servicesAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#service1" aria-expanded="true">
+                                Custom PC Building
+                            </button>
+                        </h2>
+                        <div id="service1" class="accordion-collapse collapse show" data-bs-parent="#servicesAccordion">
+                            <div class="accordion-body">
+                                We build high-performance custom PCs tailored to your needs.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#service2">
+                                PC Repairs & Maintenance
+                            </button>
+                        </h2>
+                        <div id="service2" class="accordion-collapse collapse" data-bs-parent="#servicesAccordion">
+                            <div class="accordion-body">
+                                We diagnose and fix hardware and software issues.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#service3">
+                                Upgrade Assistance
+                            </button>
+                        </h2>
+                        <div id="service3" class="accordion-collapse collapse" data-bs-parent="#servicesAccordion">
+                            <div class="accordion-body">
+                                Get expert advice and installation for PC upgrades.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <h3 class="text-danger">Our Prices</h3>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Custom PC Build</h5>
+                        <p class="card-text">Starting from <strong>$99</strong></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">PC Repair & Maintenance</h5>
+                        <p class="card-text">Starting from <strong>$49</strong></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Upgrade Assistance</h5>
+                        <p class="card-text">Starting from <strong>$29</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
