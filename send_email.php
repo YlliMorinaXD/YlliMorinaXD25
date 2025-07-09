@@ -44,13 +44,3 @@ function sendEmail($to, $subject, $bodyHtml) {
         echo "❌ Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }
 }
-
-
-
-//  $mail->isSMTP();
-//     $mail->Host = 'ttvgamestation2024@gamil.com'; // change this
-//     $mail->SMTPAuth = true;
-//     $mail->Username = 'yllimorina1982@gmail.com'; // change this
-//     $mail->Password = 'nvco rvtr wbtx uxcf'; // change this
-//     $mail->SMTPSecure = 'tls'; // or 'ssl'
-//     $mail->Port = 587;

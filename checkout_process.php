@@ -33,8 +33,8 @@ $body = "
     <p>Once the product is confirmed in stock, we’ll proceed to shipping. You’ll receive further updates.</p>
 
     <div class='order-status'>
-      Order Number: <strong>#483556</strong><br>
-      Estimated Delivery: <strong>01 April 2025 - 02 April 2025</strong>
+      Order Number: <strong>#100001</strong><br>
+      Estimated Delivery: <strong>10 Korrik - 11 Korrik</strong>
     </div>
 
     <div class='section-title'>Product Details</div>
@@ -42,20 +42,20 @@ $body = "
       <tr>
         <td><img src='https://via.placeholder.com/100' alt='Monitor' /></td>
         <td>
-          Monitor AOC 25G3ZM/BK, 24.5\", 1920 x 1080 (FullHD), 240Hz, Black<br>
+          Intel i9-14900K <br>
           Quantity: 1
         </td>
-        <td class='price'><strong>179.50 €</strong></td>
+        <td class='price'><strong>575.66 €</strong></td>
       </tr>
     </table>
 
     <div class='section-title'>Summary</div>
     <table>
-      <tr><td>Subtotal:</td><td class='price'>309.50 €</td></tr>
-      <tr><td>Product Discount:</td><td class='price'>-130.00 €</td></tr>
+      <tr><td>Subtotal:</td><td class='price'>575.66 €</td></tr>
+      <tr><td>Product Discount:</td><td class='price'>0.00 €</td></tr>
       <tr><td>Shipping:</td><td class='price'>2.00 €</td></tr>
-      <tr><td>Promo Discount + Shipping:</td><td class='price'>-2.00 €</td></tr>
-      <tr><td class='highlight'>Total:</td><td class='price highlight'>179.50 €</td></tr>
+      <tr><td>Promo Discount + Shipping:</td><td class='price'>0.0€</td></tr>
+      <tr><td class='highlight'>Total:</td><td class='price highlight'>575.66 €</td></tr>
     </table>
 
     <div class='section-title'>Shipping Address</div>
@@ -77,7 +77,7 @@ $body = "
     </p>
 
     <p><strong>Shipping Method:</strong> STANDARD - Free Shipping</p>
-    <p><strong>Payment Method:</strong> Cash on Delivery</p>
+    <p><strong>Payment Method:</strong> Pay Compleated</p>
 
     <div class='footer'>
       Thank you for shopping with Cyber Tech!

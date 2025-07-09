@@ -4,8 +4,7 @@ session_start();
 // Example: Fallback test data (REMOVE in real site)
 if (!isset($_SESSION['cart'])) {
     $_SESSION['cart'] = [
-        ['name' => 'Gaming Mouse', 'price' => 50, 'quantity' => 1],
-        ['name' => 'Mechanical Keyboard', 'price' => 120, 'quantity' => 1]
+        ['name' => 'Intel i9 - 14400 K', 'price' => 575.66, 'quantity' => 1],
     ];
 }
 ?>
