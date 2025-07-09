@@ -2,45 +2,32 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require 'PHPMailer/Exception.php';
-require 'PHPMailer/PHPMailer.php';
-require 'PHPMailer/SMTP.php';
+require 'vendor/autoload.php';  // Update path if needed
 
-function sendEmail($to, $subject, $bodyHtml) {
-    $mail = new PHPMailer(true);
+$mail = new PHPMailer(true);
 
-    try {
-        $mail->isSMTP();
-        $mail->Host = 'smtp.gmail.com';       // Gmail SMTP server
-        $mail->SMTPAuth = true;
-        $mail->Username = 'yllimorina1982@gmail.com'; // Your Gmail address
-        $mail->Password = 'nvco rvtr wbtx uxcf';          // Use your Gmail App Password here, not normal password
-        $mail->SMTPSecure = 'tls';             // TLS encryption
-        $mail->Port = 587;                     // TLS port
+try {
+    // Server settings
+    $mail->isSMTP();
+    $mail->Host       = 'smtp.example.com';      // Set your SMTP server
+    $mail->SMTPAuth   = true;
+    $mail->Username   = 'yllimorina1982@gmail.com';      // Your SMTP username
+    $mail->Password   = 'nvco rvtr wbtx uxcf';          // Your SMTP password
+    $mail->SMTPSecure = 'tls';
+    $mail->Port       = 587;
 
-        // Set the "from" email to match your authenticated user to avoid spoofing issues
-        $mail->setFrom('yllimorina1982@gmail.com', 'Cyber Tech'); 
+    // Recipients
+    $mail->setFrom('yllimorina1982@gmail.com', 'Cyber Tech');
+    $mail->addAddress($_POST['email'], $_POST['firstname']);
 
-        $mail->addAddress($to);
+    // Content
+    $mail->isHTML(true);
+    $mail->Subject = "Your Order Confirmation - Cyber Tech";
+    $mail->Body    = $body;  // Your $body HTML content here
 
-        $mail->isHTML(true);
-        $mail->Subject = $subject;
-        $mail->Body    = $bodyHtml;
-
-        // Optional: Bypass SSL verification (not recommended for production)
-        /*
-        $mail->SMTPOptions = [
-            'ssl' => [
-                'verify_peer' => false,
-                'verify_peer_name' => false,
-                'allow_self_signed' => true,
-            ],
-        ];
-        */
-
-        $mail->send();
-        echo '✅ Email sent successfully.';
-    } catch (Exception $e) {
-        echo "❌ Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-    }
+    $mail->send();
+    echo "<script>alert('✅ Email sent successfully.'); window.location.href = 'thankyou.html';</script>";
+} catch (Exception $e) {
+    echo "<script>alert('❌ Message could not be sent. Mailer Error: " . addslashes($mail->ErrorInfo) . "'); window.history.back();</script>";
 }
+?>

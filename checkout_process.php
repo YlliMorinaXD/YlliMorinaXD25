@@ -9,21 +9,25 @@ $body = "
 <html>
 <head>
   <style>
-    body { font-family: Arial, sans-serif; font-size: 14px; color: #333; }
+    body { font-family: Arial, sans-serif; font-size: 14px; color: #333; margin: 0; padding: 0; }
     .container { width: 600px; margin: auto; background: #fff; border: 1px solid #ddd; padding: 20px; }
-    .header { text-align: center; }
-    .order-status { background: #f5f5f5; padding: 10px; text-align: center; font-weight: bold; }
+    .header { text-align: center; margin-bottom: 20px; }
+    .logo { max-width: 150px; }
+    .order-status { background: #f5f5f5; padding: 10px; text-align: center; font-weight: bold; margin: 20px 0; }
     .section-title { margin-top: 20px; font-weight: bold; }
     table { width: 100%; border-collapse: collapse; margin-top: 10px; }
     th, td { padding: 8px; text-align: left; border-bottom: 1px solid #ddd; }
     .price { text-align: right; }
     .highlight { font-weight: bold; color: #e60000; }
-    .footer { margin-top: 30px; font-size: 12px; color: #777; }
+    .footer { margin-top: 30px; font-size: 12px; color: #777; text-align: center; }
+    .social-icons img { width: 24px; height: 24px; margin: 0 6px; }
+    .bottom-line { margin-top: 15px; color: #aaa; font-size: 12px; }
   </style>
 </head>
 <body>
   <div class='container'>
     <div class='header'>
+      <img class='logo' src='https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Logo_C.svg/1024px-Logo_C.svg.png' alt='Cyber Tech Logo' />
       <h2>Cyber Tech</h2>
     </div>
     
@@ -40,9 +44,9 @@ $body = "
     <div class='section-title'>Product Details</div>
     <table>
       <tr>
-        <td><img src='https://via.placeholder.com/100' alt='Monitor' /></td>
+        <td><img src='Intel Core i9-14900K.jpg' alt='Intel Core i9' /></td>
         <td>
-          Intel i9-14900K <br>
+          Intel Core i9-14900K <br>
           Quantity: 1
         </td>
         <td class='price'><strong>575.66 €</strong></td>
@@ -53,8 +57,8 @@ $body = "
     <table>
       <tr><td>Subtotal:</td><td class='price'>575.66 €</td></tr>
       <tr><td>Product Discount:</td><td class='price'>0.00 €</td></tr>
-      <tr><td>Shipping:</td><td class='price'>2.00 €</td></tr>
-      <tr><td>Promo Discount + Shipping:</td><td class='price'>0.0€</td></tr>
+      <tr><td>Shipping:</td><td class='price'>0.00 €</td></tr>
+      <tr><td>Promo Discount + Shipping:</td><td class='price'>0.00 €</td></tr>
       <tr><td class='highlight'>Total:</td><td class='price highlight'>575.66 €</td></tr>
     </table>
 
@@ -77,10 +81,24 @@ $body = "
     </p>
 
     <p><strong>Shipping Method:</strong> STANDARD - Free Shipping</p>
-    <p><strong>Payment Method:</strong> Pay Compleated</p>
+    <p><strong>Payment Method:</strong> Payment Completed</p>
 
     <div class='footer'>
-      Thank you for shopping with Cyber Tech!
+      <p>Thank you for shopping with Cyber Tech!</p>
+      
+      <div class='social-icons'>
+        <a href='https://facebook.com' style='font-size: 20px; text-decoration: none;'>
+  <i class='fa fa-facebook' aria-hidden='true'></i>
+</a>
+
+        <a href='https://twitter.com'><img src='https://cdn-icons-png.flaticon.com/512/145/145812.png' alt='Twitter'></a>
+        <a href='https://tiktok.com'><img src='https://cdn-icons-png.flaticon.com/512/3046/3046121.png' alt='TikTok'></a>
+        <a href='https://instagram.com'><img src='https://cdn-icons-png.flaticon.com/512/2111/2111463.png' alt='Instagram'></a>
+      </div>
+
+      <div class='bottom-line'>
+        © 2025 Cyber Tech. All rights reserved.
+      </div>
     </div>
   </div>
 </body>
