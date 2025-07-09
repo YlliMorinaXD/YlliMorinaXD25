@@ -2,33 +2,35 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require 'PHPMailer/src/Exception.php';
-require 'PHPMailer/src/PHPMailer.php';
-require 'PHPMailer/src/SMTP.php';
+require 'PHPMailer/Exception.php';
+require 'PHPMailer/PHPMailer.php';
+require 'PHPMailer/SMTP.php';
 
-function sendEmail($to, $subject, $body) {
-    $mail = new PHPMailer(true);
-    try {
-        // SMTP Settings
-        $mail->isSMTP();
-        $mail->Host = 'smtp.example.com'; // your SMTP server
-        $mail->SMTPAuth = true;
-        $mail->Username = 'yllimorina1982@gmail.com';
-        $mail->Password = 'nvco rvtr wbtx uxcf';
-        $mail->SMTPSecure = 'tls';
-        $mail->Port = 587;
+$mail = new PHPMailer(true);
 
-        // Email settings
-        $mail->setFrom('yllimorina1982@gmail.com', 'Cyber Tech');
-        $mail->addAddress($to);
-        $mail->Subject = $subject;
-        $mail->isHTML(true);
-        $mail->Body = $body;
+try {
+    $mail->isSMTP();
+    $mail->Host = 'ttvgamestation2024@gamil.com'; // change this
+    $mail->SMTPAuth = true;
+    $mail->Username = 'yllimorina1982@gmail.com'; // change this
+    $mail->Password = 'nvco rvtr wbtx uxcf'; // change this
+    $mail->SMTPSecure = 'tls'; // or 'ssl'
+    $mail->Port = 587;
 
-        $mail->send();
-        return true;
-    } catch (Exception $e) {
-        return false;
-    }
+    $mail->setFrom('your_email@example.com', 'Your Name');
+    $mail->addAddress('recipient@example.com');
+
+    $mail->isHTML(true);
+    $mail->Subject = 'Test Email';
+    $mail->Body    = 'This is a <b>test email</b> using PHPMailer without Composer.';
+
+    $mail->send();
+    echo '✅ Message has been sent';
+} catch (Exception $e) {
+    echo "❌ Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
 ?>
+
+
+
+nvco rvtr wbtx uxcf

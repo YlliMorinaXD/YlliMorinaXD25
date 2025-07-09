@@ -1,3 +1,14 @@
+<?php
+session_start();
+
+// Example: Fallback test data (REMOVE in real site)
+if (!isset($_SESSION['cart'])) {
+    $_SESSION['cart'] = [
+        ['name' => 'Gaming Mouse', 'price' => 50, 'quantity' => 1],
+        ['name' => 'Mechanical Keyboard', 'price' => 120, 'quantity' => 1]
+    ];
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,11 +16,12 @@
 <title>Checkout Form</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-/* Your existing CSS here (same as in your snippet) */
 body {
-  font-family: Arial;
+  font-family: Arial, sans-serif;
   font-size: 17px;
   padding: 8px;
+  background-color: #f5f5f5;
+  margin: 0;
 }
 
 * {
@@ -34,25 +46,24 @@ body {
   flex: 75%;
 }
 
-.col-25,
-.col-50,
-.col-75 {
+.col-25, .col-50, .col-75 {
   padding: 0 16px;
 }
 
 .container {
-  background-color: #f2f2f2;
-  padding: 5px 20px 15px 20px;
+  background-color: #ffffff;
+  padding: 20px;
   border: 1px solid lightgrey;
-  border-radius: 3px;
+  border-radius: 5px;
+  margin-top: 20px;
 }
 
-input[type=text] {
+input[type=text], input[type=email] {
   width: 100%;
   margin-bottom: 20px;
   padding: 12px;
   border: 1px solid #ccc;
-  border-radius: 3px;
+  border-radius: 4px;
 }
 
 label {
@@ -62,7 +73,7 @@ label {
 
 .icon-container {
   margin-bottom: 20px;
-  padding: 7px 0;
+  padding: 10px 0;
   font-size: 24px;
 }
 
@@ -70,10 +81,10 @@ label {
   background-color: #04AA6D;
   color: white;
   padding: 12px;
-  margin: 10px 0;
+  margin-top: 10px;
   border: none;
   width: 100%;
-  border-radius: 3px;
+  border-radius: 4px;
   cursor: pointer;
   font-size: 17px;
 }
@@ -84,6 +95,7 @@ label {
 
 a {
   color: #2196F3;
+  text-decoration: none;
 }
 
 hr {
@@ -93,6 +105,11 @@ hr {
 span.price {
   float: right;
   color: grey;
+}
+
+h2 {
+  text-align: center;
+  margin-top: 20px;
 }
 
 @media (max-width: 800px) {
@@ -108,12 +125,12 @@ span.price {
 <body>
 
 <h2>Responsive Checkout Form</h2>
-<p>Resize the browser window to see the effect.</p>
+<p style="text-align:center;">Resize the browser window to see the responsive effect.</p>
+
 <div class="row">
   <div class="col-75">
     <div class="container">
       <form method="post" action="checkout_process.php">
-
         <div class="row">
           <div class="col-50">
             <h3>Billing Address</h3>
@@ -176,13 +193,22 @@ span.price {
 
   <div class="col-25">
     <div class="container">
-      <h4>Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> <b><?= count($_SESSION['cart']) ?> items</b></span></h4>
+      <h4>Cart 
+        <span class="price" style="color:black">
+          <i class="fa fa-shopping-cart"></i> 
+          <b><?= isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0 ?> items</b>
+        </span>
+      </h4>
       <hr>
       <?php
       $total = 0;
-      foreach ($_SESSION['cart'] as $item) {
-          echo "<p>{$item['name']} <span class='price'>$ {$item['price']}</span></p>";
-          $total += $item['price'] * ($item['quantity'] ?? 1);
+      if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
+          foreach ($_SESSION['cart'] as $item) {
+              echo "<p>{$item['name']} <span class='price'>$ {$item['price']}</span></p>";
+              $total += $item['price'] * ($item['quantity'] ?? 1);
+          }
+      } else {
+          echo "<p>Your cart is empty.</p>";
       }
       ?>
       <hr>
