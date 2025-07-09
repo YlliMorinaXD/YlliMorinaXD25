@@ -6,31 +6,51 @@ require 'PHPMailer/Exception.php';
 require 'PHPMailer/PHPMailer.php';
 require 'PHPMailer/SMTP.php';
 
-$mail = new PHPMailer(true);
+function sendEmail($to, $subject, $bodyHtml) {
+    $mail = new PHPMailer(true);
 
-try {
-    $mail->isSMTP();
-    $mail->Host = 'ttvgamestation2024@gamil.com'; // change this
-    $mail->SMTPAuth = true;
-    $mail->Username = 'yllimorina1982@gmail.com'; // change this
-    $mail->Password = 'nvco rvtr wbtx uxcf'; // change this
-    $mail->SMTPSecure = 'tls'; // or 'ssl'
-    $mail->Port = 587;
+    try {
+        $mail->isSMTP();
+        $mail->Host = 'smtp.gmail.com';       // Gmail SMTP server
+        $mail->SMTPAuth = true;
+        $mail->Username = 'yllimorina1982@gmail.com'; // Your Gmail address
+        $mail->Password = 'nvco rvtr wbtx uxcf';          // Use your Gmail App Password here, not normal password
+        $mail->SMTPSecure = 'tls';             // TLS encryption
+        $mail->Port = 587;                     // TLS port
 
-    $mail->setFrom('your_email@example.com', 'Your Name');
-    $mail->addAddress('recipient@example.com');
+        // Set the "from" email to match your authenticated user to avoid spoofing issues
+        $mail->setFrom('yllimorina1982@gmail.com', 'Cyber Tech'); 
 
-    $mail->isHTML(true);
-    $mail->Subject = 'Test Email';
-    $mail->Body    = 'This is a <b>test email</b> using PHPMailer without Composer.';
+        $mail->addAddress($to);
 
-    $mail->send();
-    echo '✅ Message has been sent';
-} catch (Exception $e) {
-    echo "❌ Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        $mail->isHTML(true);
+        $mail->Subject = $subject;
+        $mail->Body    = $bodyHtml;
+
+        // Optional: Bypass SSL verification (not recommended for production)
+        /*
+        $mail->SMTPOptions = [
+            'ssl' => [
+                'verify_peer' => false,
+                'verify_peer_name' => false,
+                'allow_self_signed' => true,
+            ],
+        ];
+        */
+
+        $mail->send();
+        echo '✅ Email sent successfully.';
+    } catch (Exception $e) {
+        echo "❌ Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    }
 }
-?>
 
 
 
-nvco rvtr wbtx uxcf
+//  $mail->isSMTP();
+//     $mail->Host = 'ttvgamestation2024@gamil.com'; // change this
+//     $mail->SMTPAuth = true;
+//     $mail->Username = 'yllimorina1982@gmail.com'; // change this
+//     $mail->Password = 'nvco rvtr wbtx uxcf'; // change this
+//     $mail->SMTPSecure = 'tls'; // or 'ssl'
+//     $mail->Port = 587;
