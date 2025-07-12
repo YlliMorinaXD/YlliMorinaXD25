@@ -346,3 +346,30 @@ button.normal{
     content: "🛒"; /* Shopping cart emoji */
     font-size: 18px;
 }
+
+.product-page-button {
+    background-color: #007bff; /* Blue color */
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-page-button:hover {
+    background-color: #0056b3; /* Darker blue */
+    transform: scale(1.05);
+}
+
+.product-page-button:active {
+    background-color: #004494;
+    transform: scale(0.95);
+}

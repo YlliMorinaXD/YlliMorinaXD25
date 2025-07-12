@@ -1,33 +1,43 @@
 <?php
+require_once 'PHPMailer/PHPMailer.php';
+require_once 'PHPMailer/SMTP.php';
+require_once 'PHPMailer/Exception.php';
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require 'vendor/autoload.php';  // Update path if needed
+function sendEmail($toEmail, $subject, $bodyHtml) {
+    $mail = new PHPMailer(true);
 
-$mail = new PHPMailer(true);
+    try {
+        $mail->isSMTP();
+        $mail->Host       = 'smtp.gmail.com';
+        $mail->SMTPAuth   = true;
+        $mail->Username   = 'yllimorina1982@gmail.com';
+        $mail->Password   = 'ajah lbdf mvhj dwqo'; // App password
+        $mail->SMTPSecure = 'tls';
+        $mail->Port       = 587;
 
-try {
-    // Server settings
-    $mail->isSMTP();
-    $mail->Host       = 'smtp.example.com';      // Set your SMTP server
-    $mail->SMTPAuth   = true;
-    $mail->Username   = 'yllimorina1982@gmail.com';      // Your SMTP username
-    $mail->Password   = 'nvco rvtr wbtx uxcf';          // Your SMTP password
-    $mail->SMTPSecure = 'tls';
-    $mail->Port       = 587;
+        // SSL Fix if needed
+        $mail->SMTPOptions = [
+            'ssl' => [
+                'verify_peer' => false,
+                'verify_peer_name' => false,
+                'allow_self_signed' => true
+            ]
+        ];
 
-    // Recipients
-    $mail->setFrom('yllimorina1982@gmail.com', 'Cyber Tech');
-    $mail->addAddress($_POST['email'], $_POST['firstname']);
+        $mail->setFrom('yllimorina1982@gmail.com', 'Cyber Tech');
+        $mail->addAddress($toEmail);
 
-    // Content
-    $mail->isHTML(true);
-    $mail->Subject = "Your Order Confirmation - Cyber Tech";
-    $mail->Body    = $body;  // Your $body HTML content here
+        $mail->isHTML(true);
+        $mail->Subject = $subject;
+        $mail->Body    = $bodyHtml;
 
-    $mail->send();
-    echo "<script>alert('✅ Email sent successfully.'); window.location.href = 'thankyou.html';</script>";
-} catch (Exception $e) {
-    echo "<script>alert('❌ Message could not be sent. Mailer Error: " . addslashes($mail->ErrorInfo) . "'); window.history.back();</script>";
+        $mail->send();
+        return true;
+    } catch (Exception $e) {
+        error_log("Email Error: " . $mail->ErrorInfo);
+        return false;
+    }
 }
-?>
