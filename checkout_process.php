@@ -44,7 +44,9 @@ $body = "
     <div class='section-title'>Product Details</div>
     <table>
       <tr>
-        <td><img src='Intel Core i9-14900K.jpg' alt='Intel Core i9' width='100'></td>
+        <td>
+          <img src='http://localhost/YlliMorinaXD25/Intel%20Core%20i9-14900K.jpg' alt='Intel Core i9' width='100' style='border:1px solid #ccc; padding:4px;'>
+        </td>
         <td>Intel Core i9-14900K<br>Quantity: 1</td>
         <td class='price'><strong>575.66 €</strong></td>
       </tr>
@@ -84,21 +86,10 @@ $body = "
 </html>
 ";
 
-require_once 'send_email.php';
-
-$email = $_POST['email'] ?? '';
-$name = $_POST['firstname'] ?? 'Customer';
-
-// [Keep your email body here... it's good!]
-
 // Send the email
 if (sendEmail($email, $subject, $body)) {
     echo "<script>alert('✅ Order placed and confirmation sent to {$email}'); window.location.href='index.html';</script>";
 } else {
     echo "<script>alert('⚠️ Email could not be sent. Please try again later.'); window.location.href='checkout.php';</script>";
 }
-
-
-
-
 ?>
