@@ -63,53 +63,85 @@ button.normal{
     color: #555;
 }
 
+/* Navbar Container */
 #header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 80px;
-    background-color: #ffffff;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
-    z-index: 999;
+    padding: 14px 60px;
+    background: #fff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     position: sticky;
     top: 0;
     left: 0;
+    z-index: 1000;
 }
 
+/* Navigation Links */
 #navbar {
     display: flex;
     align-items: center;
-    justify-content: center;
+    gap: 35px; /* cleaner spacing */
 }
 
+/* Nav Items */
 #navbar li {
     list-style: none;
-    padding: 0 20px;
     position: relative;
 }
 
-#navbar li a{
+/* Nav Links */
+#navbar li a {
     text-decoration: none;
     font-size: 16px;
     font-weight: 600;
-    color: #1a1a1a;
-    transition: 0.3s ease;
+    color: #222;
+    padding: 8px 4px; /* better clickable area */
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* Hover & Active Underline Effect */
+#navbar li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: #088178;
+    transition: width 0.3s ease;
+    border-radius: 2px;
+}
+
+#navbar li a:hover::after,
+#navbar li a.active::after {
+    width: 100%;
 }
 
 #navbar li a:hover,
-#navbar li a.active{
-    color:#088178
+#navbar li a.active {
+    color: #088178;
 }
-#navbar li a.active::after,
-#navbar li a:hover::after {
-    content: "";
-    width: 60%;
-    height: 2px;
-    background: #088178;
-    position: absolute;
-    bottom: -4px;
-    left: 20px;
+
+/* Right Section (Cart/Profile Icons) */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
+
+.nav-actions i {
+    font-size: 20px;
+    color: #222;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.nav-actions i:hover {
+    color: #088178;
+}
+
 /* Home Page */
 #hero{
     background-image: url("images/backround3.jpg");
