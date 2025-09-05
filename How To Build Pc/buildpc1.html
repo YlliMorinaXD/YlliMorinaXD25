@@ -1,107 +1,182 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>High-End Custom PC Build | Your Brand</title>
-  <link rel="stylesheet" href="buildpc1.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AMD Budget Custom Build — Product</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Fonts (same feel as many ecommerce pages) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="buildpc1.css">
 </head>
 <body>
+  <!-- Header / top nav (simple replica) -->
+  <header class="site-header bg-white border-bottom">
+    <div class="container d-flex align-items-center justify-content-between py-3">
+      <a class="brand d-flex align-items-center text-decoration-none" href="#">
+        <span class="h5 mb-0">Cyber Tech</span>
+      </a>
 
-  <main class="container">
-    <section class="product-intro">
-      <h2>High-End Custom PC Build</h2>
-      <p class="subtitle">
-        Build your dream gaming PC with our step-by-step guide. Perfect for enthusiasts and beginners alike.
-      </p>
-      <img src="https://cdn.shopify.com/s/files/1/0501/9825/5862/products/pc-custom-build-1_800x.jpg" alt="Custom PC Build" class="intro-image" />
-    </section>
+    </div>
+  </header>
 
-    <section class="build-steps">
-      <h3>How To Build Your PC</h3>
+  <!-- Main product area -->
+  <main class="container my-5">
+    <div class="row gx-4">
+      <!-- Left: Gallery -->
+      <div class="col-lg-6">
+        <div class="product-gallery">
+          <!-- Main image (replace src with your main product image) -->
+          <div class="main-image mb-3">
+            <img id="mainImage" src="pc.png" alt="Product main image" class="img-fluid rounded shadow-sm">
+          </div>
 
-      <div class="accordion">
-        <button class="accordion-btn">1. Choose Your Components</button>
-        <div class="accordion-panel">
-          <p>Pick a compatible CPU, motherboard, RAM, GPU, storage, power supply, and case. Check compatibility and performance.</p>
+          <!-- Thumbnails (replace with your images) -->
+          <div class="thumbnails d-flex gap-2">
+            <img class="thumb active" src="thumbnail_1.png" data-full="IMAGE_MAIN.jpg" alt="thumb 1">
+            <img class="thumb" src="thumbnail_2.png" data-full="IMAGE_THUMB_2.jpg" alt="thumb 2">
+            <img class="thumb" src="thumbnail_3.png" data-full="IMAGE_THUMB_3.jpg" alt="thumb 3">
+            <img class="thumb" src="thumbnail_4.png" data-full="IMAGE_THUMB_4.jpg" alt="thumb 4">
+          </div>
         </div>
       </div>
 
-      <div class="accordion">
-        <button class="accordion-btn">2. Prepare Your Workspace</button>
-        <div class="accordion-panel">
-          <p>Clean, static-free area with tools ready: screwdriver, anti-static wristband, thermal paste, and more.</p>
-        </div>
+      <!-- Right: Product info & purchase box -->
+      <div class="col-lg-6">
+        <div class="product-info">
+          <h1 id="productTitle" class="product-title">AMD Budget Custom Build - Example Title</h1>
+          <div class="d-flex align-items-center gap-3 mb-2">
+            <div class="h3 mb-0 text-primary" id="productPrice">$1,449.99</div>
+            <div class="text-muted small">Inc. taxes</div>
+          </div>
+
+          <div class="mb-3 small text-muted">
+            <span>SKU: <strong id="productSku">ATX-AMD-001</strong></span> •
+            <span id="availability">In stock</span>
+          </div>
+
+          <p id="shortDesc" class="lead text-muted">Short product description — highlight features here.</p>
+
+          <!-- Purchase card (sticky on desktop) -->
+          <div class="purchase-card card mb-4">
+            <div class="card-body">
+              <div class="d-flex align-items-center mb-3">
+                <div class="me-auto">
+                  <div class="small text-muted">Price</div>
+                  <div class="h4 mb-0" id="priceCard">1,914.50$</div>
+                </div>
+              </div>
+
+              <!-- Quantity & Add to cart -->
+              <div class="d-flex gap-2 align-items-center mb-3">
+                <div class="input-group quantity-group" style="width:140px">
+                  <button class="btn btn-outline-secondary btn-qty" id="decQty" type="button">−</button>
+                  <input type="text" id="qtyInput" class="form-control text-center" value="1" />
+                  <button class="btn btn-outline-secondary btn-qty" id="incQty" type="button">＋</button>
+                </div>
+
+                <button id="addToCart" class="btn btn-lg btn-primary flex-fill">Add to cart</button>
+              </div>
+
+              <div class="mb-2 small text-muted">Pickup & Shipping</div>
+              <ul class="list-unstyled small text-muted">
+                <li>• Pickup available at store — ready in 1 hour</li>
+                <li>• Free shipping over $99</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Tabs: Description / Specs / Reviews -->
+          <div class="product-tabs">
+            <ul class="nav nav-tabs" id="productTab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="desc-tab" data-bs-toggle="tab" data-bs-target="#desc" type="button" role="tab">Description</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="spec-tab" data-bs-toggle="tab" data-bs-target="#spec" type="button" role="tab">Specifications</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="rev-tab" data-bs-toggle="tab" data-bs-target="#rev" type="button" role="tab">Reviews</button>
+              </li>
+            </ul>
+            <div class="tab-content border p-4">
+              <div class="tab-pane fade show active" id="desc" role="tabpanel">
+                <!-- Replace with your full product description -->
+                <h5>Overview</h5>
+                <p>This is the full product description. Replace this paragraph with your content and feature list.</p>
+                <ul>
+                  <li>AMD Ryzen CPU</li>
+                  <li>NVMe storage</li>
+                  <li>Custom cable management</li>
+                </ul>
+              </div>
+
+              <div class="tab-pane fade" id="spec" role="tabpanel">
+                <!-- Replace with your full specs -->
+                <h5>Specifications</h5>
+                <table class="table table-sm">
+                  <tbody>
+                    <tr><th scope="row">MotherBoard</th><td>Asrock B650M PG Lightning AMD B650 Socket AM5 micro ATX</td></tr>
+                    <tr><th scope="row">Proccesor</th><td>AMD Ryzen 7 7800X3D</td></tr>
+                    <tr><th scope="row">RAM</th><td>Memorie RAM Kingston Fury Beast DDR5 2x16GB 5200Mhz CL40s</td></tr>
+                    <tr><th scope="row">GPU</th><td>MSI GeForce RTX 4060 Ventus 2X Black OC 8GB GDDR6</td></tr>
+                    <tr><th scope="row">Storage</th><td>Kingston Technology, 1TB NV3 M.2 2280 NVMe</td></tr>
+                    <tr><th scope="row">Cooler</th><td>Arctic Freezer 34 eSports DUO, i hirtë/ bardhë</td></tr>
+                    <tr><th scope="row">Power Supply</th><td>DeepCool PF750, 20+4 pin ATX, 750 W</td></tr>
+                    <tr><th scope="row">Case</th><td>Kolink Observatory HF Glass ARGB, Midi-Tower, e bardhë</td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="tab-pane fade" id="rev" role="tabpanel">
+                <!-- Example reviews; replace with yours -->
+                <h5>Customer Reviews</h5>
+                <div class="mb-3">
+                  <strong>John D.</strong> <span class="small text-muted">— 5 stars</span>
+                  <p class="mb-0 small">Superb value for money.</p>
+                </div>
+                <div>
+                  <strong>Sarah L.</strong> <span class="small text-muted">— 4 stars</span>
+                  <p class="mb-0 small">Great build, quick shipping.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /.product-info -->
       </div>
-
-      <div class="accordion">
-        <button class="accordion-btn">3. Install the CPU & RAM</button>
-        <div class="accordion-panel">
-          <p>Open the motherboard socket carefully, insert the CPU, secure it, and install your RAM sticks properly.</p>
-        </div>
-      </div>
-
-      <div class="accordion">
-        <button class="accordion-btn">4. Mount the Motherboard</button>
-        <div class="accordion-panel">
-          <p>Place the motherboard inside the case and screw it onto standoffs to avoid short circuits.</p>
-        </div>
-      </div>
-
-      <div class="accordion">
-        <button class="accordion-btn">5. Install the Power Supply</button>
-        <div class="accordion-panel">
-          <p>Secure the PSU and route the cables for power delivery to components.</p>
-        </div>
-      </div>
-
-      <div class="accordion">
-        <button class="accordion-btn">6. Install Storage & GPU</button>
-        <div class="accordion-panel">
-          <p>Mount SSDs/HDDs in designated bays and install your graphics card into the PCIe slot.</p>
-        </div>
-      </div>
-
-      <div class="accordion">
-        <button class="accordion-btn">7. Connect All Cables</button>
-        <div class="accordion-panel">
-          <p>Connect power, data cables, case buttons, USB, and fans carefully according to your motherboard manual.</p>
-        </div>
-      </div>
-
-      <div class="accordion">
-        <button class="accordion-btn">8. Power On & Install OS</button>
-        <div class="accordion-panel">
-          <p>Boot your PC, enter BIOS to verify settings, and install your operating system.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact-section">
-      <h3>Got Questions? Contact Us!</h3>
-      <form id="contactForm" action="contact.php" method="POST" class="contact-form">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" required />
-
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required />
-
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
-
-        <button type="submit" class="btn-primary">Send Message</button>
-      </form>
-      <div id="formMessage" class="form-message"></div>
-    </section>
+    </div>
   </main>
 
-  <footer class="footer">
-    <div class="container footer-container">
-      <p>&copy; 2025 YourBrand. All rights reserved.</p>
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-4">
+    <div class="container d-flex justify-content-between">
+      <small>&copy; Cyber Tech — All rights reserved</small>
+      <div class="small">Terms • Privacy • Contact</div>
     </div>
   </footer>
 
+  <!-- Toast container -->
+  <div class="position-fixed bottom-0 end-0 p-3" style="z-index:1080">
+    <div id="cartToast" class="toast align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body" id="toastBody">Added to cart</div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="buildpc1.js"></script>
 </body>
 </html>
+
+
+
