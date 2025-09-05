@@ -5,6 +5,14 @@ require_once 'send_email.php';
 $email = $_POST['email'] ?? '';
 $name = $_POST['firstname'] ?? 'Customer';
 
+// Public image URLs
+$logoUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Logo_C.svg/1024px-Logo_C.svg.png";
+$productImgUrl = "https://iqq6kf0xmf.gjirafa.net/images/7d4a58e1-2bfa-44ed-8b62-f18b3d86d595/7d4a58e1-2bfa-44ed-8b62-f18b3d86d595.webp?w=400";
+$facebookIcon = "https://cdn-icons-png.flaticon.com/512/733/733547.png";
+$twitterIcon = "https://cdn-icons-png.flaticon.com/512/145/145812.png";
+$tiktokIcon = "https://cdn-icons-png.flaticon.com/512/3046/3046121.png";
+$instagramIcon = "https://cdn-icons-png.flaticon.com/512/2111/2111463.png";
+
 // Build email content
 $subject = "Your Order Confirmation - Cyber Tech";
 $body = "
@@ -28,7 +36,7 @@ $body = "
 <body>
   <div class='container'>
     <div class='header'>
-      <img class='logo' src='https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Logo_C.svg/1024px-Logo_C.svg.png' alt='Cyber Tech Logo' />
+      <img class='logo' src='$logoUrl' alt='Cyber Tech Logo' />
       <h2>Cyber Tech</h2>
     </div>
     
@@ -38,14 +46,14 @@ $body = "
 
     <div class='order-status'>
       Order Number: <strong>#100001</strong><br>
-      Estimated Delivery: <strong>10 Korrik - 11 Korrik</strong>
+      Estimated Delivery: <strong>19 Shtator - 30 Shtator</strong>
     </div>
 
     <div class='section-title'>Product Details</div>
     <table>
       <tr>
         <td>
-          <img src='http://localhost/YlliMorinaXD25/Intel%20Core%20i9-14900K.jpg' alt='Intel Core i9' width='100' style='border:1px solid #ccc; padding:4px;'>
+          <img src='$productImgUrl' alt='Intel Core i9' width='100' style='border:1px solid #ccc; padding:4px;'>
         </td>
         <td>Intel Core i9-14900K<br>Quantity: 1</td>
         <td class='price'><strong>575.66 €</strong></td>
@@ -74,10 +82,10 @@ $body = "
     <div class='footer'>
       <p>Thank you for shopping with Cyber Tech!</p>
       <div class='social-icons'>
-        <a href='https://facebook.com'><img src='https://cdn-icons-png.flaticon.com/512/733/733547.png' alt='Facebook'></a>
-        <a href='https://twitter.com'><img src='https://cdn-icons-png.flaticon.com/512/145/145812.png' alt='Twitter'></a>
-        <a href='https://tiktok.com'><img src='https://cdn-icons-png.flaticon.com/512/3046/3046121.png' alt='TikTok'></a>
-        <a href='https://instagram.com'><img src='https://cdn-icons-png.flaticon.com/512/2111/2111463.png' alt='Instagram'></a>
+        <a href='https://facebook.com'><img src='$facebookIcon' alt='Facebook'></a>
+        <a href='https://twitter.com'><img src='$twitterIcon' alt='Twitter'></a>
+        <a href='https://tiktok.com'><img src='$tiktokIcon' alt='TikTok'></a>
+        <a href='https://instagram.com'><img src='$instagramIcon' alt='Instagram'></a>
       </div>
       <p>© 2025 Cyber Tech. All rights reserved.</p>
     </div>

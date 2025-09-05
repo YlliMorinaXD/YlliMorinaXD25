@@ -14,7 +14,7 @@ function sendEmail($toEmail, $subject, $bodyHtml) {
         $mail->Host       = 'smtp.gmail.com';
         $mail->SMTPAuth   = true;
         $mail->Username   = 'yllimorina1982@gmail.com';
-        $mail->Password   = 'ajah lbdf mvhj dwqo'; // App password
+        $mail->Password   = 'cbwj skjs ezwe hrig'; // App password
         $mail->SMTPSecure = 'tls';
         $mail->Port       = 587;
 
@@ -41,3 +41,4 @@ function sendEmail($toEmail, $subject, $bodyHtml) {
         return false;
     }
 }
+
